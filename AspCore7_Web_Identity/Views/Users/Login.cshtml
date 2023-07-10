@@ -1,0 +1,95 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 25px;   
+        background-color: lightblue;  
+    }   
+</style>   
+</head>    
+<body>    
+    <center> <h1>  Login Form </h1> </center>   
+    <form action="/Users/LoginApi">
+        <div class="container">   
+            <div class="form-floating mb-3">
+                <input class="form-control" autocomplete="username" name="Email" aria-required="true" placeholder="name@example.com" />
+                <label  class="form-label">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" autocomplete="current-password" name="Password" aria-required="true" placeholder="password" />
+                <label class="form-label">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+                <label class="form-label">
+                    <input class="form-check-input" />
+                    @*@Html.DisplayNameFor(m => m.Input.RememberMe)*@
+                </label>
+            </div>
+            <button type="submit">Login</button>   
+           @* <input type="checkbox" checked="checked"> Remember me   *@
+            <button type="button" class="cancelbtn"> Cancel</button>   
+            Forgot <a href="#"> password? </a>   
+        </div>   
+    </form>     
+</body>     
+</html>  
+
+
+@*<html>
+    <head>
+        <script src="~/js/jquery1.12.4.js"></script>
+        <script>
+            $(document).ready(function(){
+            $.ajax({
+                type: "POST",
+                url: "/Users/LoginApi",
+                data: { returnUrl: "/home/index", Input: { Email: "panshubei@outlook.com", Password: "Qweasdzxc.123", RememberMe: false } },
+                dataType: "json"
+            });
+            })
+        </script>
+    </head>
+    <body>
+        <form></form>
+    </body>
+</html>*@
