@@ -15,9 +15,9 @@ namespace AspCore7_Web_Identity.Controllers
         private readonly SignInManager<Users> _signInManager;
         private readonly ILogger<UsersController> _logger;
 
-#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+#pragma warning disable CS8618 
         public UsersController(SignInManager<Users> signInManager, ILogger<UsersController> logger)
-#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+#pragma warning restore CS8618 
         {
             _signInManager = signInManager;
             _logger = logger;
@@ -102,9 +102,9 @@ namespace AspCore7_Web_Identity.Controllers
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-#pragma warning disable CS8604 // 引用类型参数可能为 null。
+#pragma warning disable CS8604 
                 var result = await _signInManager.PasswordSignInAsync( username, password, rememberme, lockoutOnFailure: false);
-#pragma warning restore CS8604 // 引用类型参数可能为 null。
+#pragma warning restore CS8604 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
